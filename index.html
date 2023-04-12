@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather-app</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="weather-app-wrapper">
+        <div class="weater-app">
+          <form id="search-form">
+            <div class="row mb-4">
+              <div class="col-8">
+                <input
+                  type="search"
+                  placeholder="Type a city name..."
+                  class="form-control"
+                  id="city-input"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-3">
+                <input type="submit" value="search" class="btn btn-warning" />
+              </div>
+            </div>
+          </form>
+          <div class="overview">
+            <h1 id="city">New York</h1>
+            <ul>
+              <li id="date"></li>
+              <li id="description">Rain</li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="clearfix weather-temperature">
+                <img
+                  src="  https://openweathermap.org/img/wn/10d@2x.png "
+                  alt=""
+                  id="icon"
+                  class="float-left"
+                />
+
+                <div class="float-left">
+                  <strong id="temprature"></strong>
+                  <span class="unit">℃ | <a href="#">℉</a> </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <ul>
+                <li class="degree">Humidity: <span id="humidity"></span>%</li>
+                <li class="degree">Wind: <span id="wind"></span>km/h</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="link">
+          <a href="https://github.com/Islomjon-2013/vanella-weather"
+            >Open sourse code
+          </a>
+          <span class="name">by Khulkar</span>
+        </div>
+      </div>
+    </div>
+    <script src="src/app.js"></script>
+  </body>
+</html>
