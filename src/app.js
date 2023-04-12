@@ -41,12 +41,32 @@ function displayTemprature(response) {
   let dateEliment = document.querySelector("#date");
   dateEliment.innerHTML = dateFormat(response.data.dt * 1000);
   let iconEliment = document.querySelector("#icon");
+  selsiusTemprature = response.data.main.temp;
   iconEliment.setAttribute(
     "src",
     ` https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconEliment.setAttribute("alt", response.data.weather[0].description);
 }
-
+function showFarenTemprature(event) {
+  event.preventDefault();
+  let calculate = Math.round((selsiusTemprature * 9) / 5 + 32);
+  let temprature = document.querySelector("#temprature");
+  selsiusLink.classList.remove("active");
+  farenlink.classList.add("active");
+  temprature.innerHTML = calculate;
+}
+function selsiusTemp(event) {
+  event.preventDefault();
+  selsiusLink.classList.add("active");
+  farenlink.classList.remove("active");
+  let temprature = document.querySelector("#temprature");
+  temprature.innerHTML = Math.round(selsiusTemprature);
+}
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchButton);
+let farenlink = document.querySelector("#faren-link");
+farenlink.addEventListener("click", showFarenTemprature);
+let selsiusTemprature = null;
+let selsiusLink = document.querySelector("#selcius-link");
+selsiusLink.addEventListener("click", selsiusTemp);
