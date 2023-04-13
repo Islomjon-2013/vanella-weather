@@ -3,7 +3,7 @@ function dateFormat(timeStamp) {
   let date = new Date(timeStamp);
   let hour = date.getHours();
   let minutes = date.getMinutes();
-  if (minutes < 10) {
+  if (minutes > 10) {
     minutes = `0${minutes}`;
   }
   if (hour < 10) {
